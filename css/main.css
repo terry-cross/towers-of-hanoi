@@ -1,2 +1,42 @@
-
 /*  Put your CSS Here */
+h1 {
+    text-align: center;
+}
+.rod {
+    width: 20px;
+    height: 200px;
+    background-color: black;
+    display: flex;
+    flex-direction: column-reverse;  
+    align-items: center;
+}
+.disk {
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.clicked {
+    border: 2px solid red;
+}
+#container {
+    width: 800px;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#disk1 {
+    width: 50px;
+    background-color: blue;
+}
+#disk2 {
+    width: 100px;
+    background-color: purple;
+}
+#disk3 {
+    width: 150px;
+    background-color: green;
+}
+#disk4 {
+    width: 200px;
+    background-color: red;
+}
