@@ -3,7 +3,7 @@ resetButton.addEventListener('click', function () {
     location.reload();
 });
 
-let holderId = '';
+let holderId;
 let gameState = 'pickup';
 const rodClick = function (event) {
     let clickedRod = event.currentTarget;
@@ -19,7 +19,7 @@ const rodClick = function (event) {
         let discSize = newDisc.dataset.size;
         if (clickedRod.childElementCount > 0) {
             let stackedDisc = clickedRod.firstElementChild.dataset.size;
-            discSize < stackedDisc ? clickedRod.append(newDisc) : alert("You can not stack a disc on top of a smaller disc.");
+            discSize <= stackedDisc ? clickedRod.append(newDisc) : alert("Sorry, you can not stack a disc on top of a smaller disc.");
         }
         else {
             clickedRod.append(newDisc);
@@ -28,7 +28,7 @@ const rodClick = function (event) {
     }
     if (rod3.childElementCount === 4) {
         setTimeout(function () {
-            alert('Congratulations, you beat the tower!');
+            alert('Congratulations, you beat the tower of Hanoi!');
             location.reload();
         }, 1000);
     }
