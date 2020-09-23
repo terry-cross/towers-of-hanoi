@@ -2,6 +2,9 @@
 h1 {
     text-align: center;
 }
+#container {
+    background: grey;
+}
 .rod {
     width: 20px;
     height: 200px;
@@ -10,7 +13,7 @@ h1 {
     flex-direction: column-reverse;  
     align-items: center;
 }
-.disk {
+.disc {
     height: 30px;
     border: 2px solid black;
     border-radius: 10px;
@@ -24,19 +27,19 @@ h1 {
     display: flex;
     justify-content: space-evenly;
 }
-#disk1 {
+#disc1 {
     width: 50px;
     background-color: blue;
 }
-#disk2 {
+#disc2 {
     width: 100px;
     background-color: purple;
 }
-#disk3 {
+#disc3 {
     width: 150px;
     background-color: green;
 }
-#disk4 {
+#disc4 {
     width: 200px;
     background-color: red;
 }
