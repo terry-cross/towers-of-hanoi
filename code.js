@@ -1,5 +1,4 @@
-let resetButton = document.getElementById('reset');
-resetButton.addEventListener('click', function () {
+reset.addEventListener('click', function () {
     location.reload();
 });
 
@@ -16,8 +15,8 @@ const rodClick = function (event) {
         newDisc.classList.toggle('clicked');
         let discSize = newDisc.dataset.size;
         if (clickedRod.childElementCount > 0) {
-            let stackedDisc = clickedRod.firstElementChild.dataset.size;
-            discSize <= stackedDisc ? clickedRod.append(newDisc) : alert("Sorry, you can not stack a disc on top of a smaller disc.");
+            let bottomDisc = clickedRod.firstElementChild.dataset.size;
+            discSize <= bottomDisc ? clickedRod.append(newDisc) : alert("Sorry, you can not stack a disc on top of a smaller disc.");
         }
         else {
             clickedRod.append(newDisc);
@@ -32,7 +31,6 @@ const rodClick = function (event) {
     }
 }
 
-let game = document.getElementById('game');
 let holderId;
 let gameState = 'pickup';
 for (i = 1; i < 4; i++) {
