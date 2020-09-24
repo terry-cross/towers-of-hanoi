@@ -3,8 +3,6 @@ resetButton.addEventListener('click', function () {
     location.reload();
 });
 
-let holderId;
-let gameState = 'pickup';
 const rodClick = function (event) {
     let clickedRod = event.currentTarget;
     let topDisc = clickedRod.lastElementChild;
@@ -34,10 +32,23 @@ const rodClick = function (event) {
     }
 }
 
-let rod1 = document.getElementById('rod1');
-let rod2 = document.getElementById('rod2');
-let rod3 = document.getElementById('rod3');
+let game = document.getElementById('game');
+let holderId;
+let gameState = 'pickup';
+for (i = 1; i < 4; i++) {
+    let rod = document.createElement('div');
+    rod.setAttribute('class', 'rod');
+    rod.setAttribute('id', 'rod' + i);
+    if (i === 1) {
+        for (d = 4; d > 0; d--) {
+            let disc = document.createElement('div');
+            disc.setAttribute('class', 'disc');
+            disc.setAttribute('id', 'disc' + d);
+            disc.setAttribute('data-size', d);
+            rod.append(disc);
+        }
+    }
+    rod.addEventListener('click', rodClick);
+    game.append(rod);
+}
 
-rod1.addEventListener('click', rodClick);
-rod2.addEventListener('click', rodClick);
-rod3.addEventListener('click', rodClick);
