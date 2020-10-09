@@ -15,7 +15,7 @@ const rodClick = function (event) {
         newDisc.classList.toggle('clicked');
         let discSize = newDisc.dataset.size;
         if (clickedRod.childElementCount > 0) {
-            let bottomDisc = clickedRod.firstElementChild.dataset.size;
+            let bottomDisc = clickedRod.lastElementChild.dataset.size;
             discSize <= bottomDisc ? clickedRod.append(newDisc) : alert("Sorry, you can not stack a disc on top of a smaller disc.");
         }
         else {
